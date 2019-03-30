@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Skript: 
+% Skript:
 % Author:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -29,7 +29,7 @@ dir_struct = dir(fullfile(tName,'*.c3d'));
 % Sort the files by name and list the filenames
 [filenames,~] = sortrows({dir_struct.name}');
 
-for i = 1:length(filenames) 
+for i = 1:length(filenames)
     % Get name of file currently processed
     fName = fullfile(tName,filenames{i});
     % Display name of currently processed file
@@ -43,16 +43,16 @@ for i = 1:length(filenames)
     % interpolated (value from 0 to 100). In case of 20, only markers with
     % less than 20 percent missings will be interpolated
     points = interpolateStruct(points, 100);
-
+    
     %     %% Filter the interpolated data
     %     % The butter filter smoothes the data with input arguments
     %     points_filt = filterKinematicsButter(points,pointsInfo.frequency, ...
     %         10.5,40);
-
+    
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Start working with data from each file 
+    % Start working with data from each file
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     %% Create means for segments
@@ -61,7 +61,7 @@ for i = 1:length(filenames)
     
     % Create a character list of all marker names
     markerNames = fieldnames(points);
-   
+    
     % Initiate Markers
     HeadTori = [];
     HeadUke = [];
@@ -74,7 +74,7 @@ for i = 1:length(filenames)
         switch string
             case {'HeadUke1','HeadUke2','HeadUke3','HeadUke4'}
                 HeadUke =  cat(3,HeadUke,points.(string));
-            case {'MariaHead1','MariaHead2','MariaHead3','MariaHead4'} 
+            case {'MariaHead1','MariaHead2','MariaHead3','MariaHead4'}
                 % Get all the xyz markers and stack in fourth dimension
                 HeadTori =  cat(3,HeadTori,points.(string));
                 
@@ -100,17 +100,17 @@ for i = 1:length(filenames)
     mean.HeadUke_c = HeadUke_c;
     mean.LeftHand_c = LeftHand_c;
     mean.RightHand_c = RightHand_c;
-        
-HeadUke_c = ones(fileLength,3);
-mean.HeadUke_c = ones(fileLength,3);
+    
+    HeadUke_c = ones(fileLength,3);
+    mean.HeadUke_c = ones(fileLength,3);
     
     vLeft = HeadUke_c - LeftHand_c;
     vRight = HeadUke_c - RightHand_c;
-
+    
     
     % https://ch.mathworks.com/matlabcentral/answers/16243-angle-between-two-vectors-in-3d
     for i = 1:fileLength
-    angle(i,:) = atan2(norm(cross(vLeft(i,:),vRight(i,:))), dot(vLeft(i,:),vRight(i,:)));
+        angle(i,:) = atan2(norm(cross(vLeft(i,:),vRight(i,:))), dot(vLeft(i,:),vRight(i,:)));
     end
     % Radian to degree
     angle = angle*(180/pi);
@@ -118,9 +118,19 @@ mean.HeadUke_c = ones(fileLength,3);
     % plot(angle)
     
     visualizeMarkers(mean,pointsInfo,fileLength,4000,vLeft,vRight)
- 
+    
 end
 
+% Initialize a figure with all the angle distributions
+q = figure;
 
+for b = 1:size(angleTable,2)
+    % Create sublpot for each trial
+    subplot(1,size(angleTable,2),b)
+    q = boxplot(angleTable(:,b));
+    q = title(MedianTrials(1,b));
+end
+
+saveas(q,'boxplot.png')
 
 

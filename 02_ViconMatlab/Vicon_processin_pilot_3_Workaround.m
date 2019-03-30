@@ -75,12 +75,14 @@ for w = 1:length(filenames)
                 HeadUke =  cat(3,HeadUke,points.(string));
             case {'Head1','Head2','Head3','Head4'}
                 % Get all the xyz markers and stack in fourth dimension
-                HeadTori =  cat(3,HeadTori,points.(string));   
+                HeadTori =  cat(3,HeadTori,points.(string));
+                
             case {'LeftHand1','LeftHand2','LeftHand3','LeftHand4'}
                 LeftHand =  cat(3,LeftHand,points.(string));
             case {'RightHand1','RightHand2','RightHand3','RightHand4'}
                 RightHand =  cat(3,RightHand,points.(string));
-            otherwise     
+            otherwise
+                
         end
     end
     
@@ -94,13 +96,16 @@ for w = 1:length(filenames)
     
     %% Visualize Markers in case needed
     %     visualizeMarkers_andMeans(points,mean,pointsInfo,fileLength,400)
-   
-    %% Calculate Angles between segments
+    
+    
+    %% Create angle between HeadUke and Hands
+    
     % Create a vector from Head to either hand
     HLeft = average.HeadUke_c - average.LeftHand_c;
     HRight = average.HeadUke_c - average.RightHand_c;
- 
-    % Create angle between HeadUke and Hands
+    
+   
+    
     % https://ch.mathworks.com/matlabcentral/answers/328240-calculate-the-3d-angle-between-two-vectors
     for d = 1:fileLength
         HLeftv = HLeft(d,:)'; % Transform the first double into vert vector
@@ -116,5 +121,15 @@ for w = 1:length(filenames)
     
 end
 
-%% Visualize
-boxplotTrials(angleTable, MedianTrials);
+% Initialize a figure with all the angle distributions
+q = figure;
+
+for b = 1:size(angleTable,1)
+    % Create sublpot for each trial
+    subplot(1,size(angleTable,1),b)
+    a = angleTable{b,:};
+    q = boxplot(a);
+    q = title(MedianTrials(1,b));
+end
+
+saveas(q,'99_Plots/boxplot.png')
