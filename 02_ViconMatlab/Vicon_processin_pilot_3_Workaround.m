@@ -30,7 +30,7 @@ dir_struct = dir(fullfile(tName,'*.c3d'));
 [filenames,~] = sortrows({dir_struct.name}');
 trialnames = regexprep(filenames, '.c3d', ''); % Remove file extension
 
-for w = 1:length(filenames)
+for w = 1%:length(filenames)
     % Get name of file currently processed
     fName = fullfile(tName,filenames{w});
     % Display name of currently processed file
@@ -95,17 +95,14 @@ for w = 1:length(filenames)
     average.RightHand_c = sum(RightHand,3)/size(RightHand,3);
     
     %% Visualize Markers in case needed
-    %     visualizeMarkers_andMeans(points,mean,pointsInfo,fileLength,400)
+    visualizeMarkers_andMeans(points,average,pointsInfo,fileLength,400,0)
     
     
     %% Create angle between HeadUke and Hands
-    
     % Create a vector from Head to either hand
     HLeft = average.HeadUke_c - average.LeftHand_c;
     HRight = average.HeadUke_c - average.RightHand_c;
-    
    
-    
     % https://ch.mathworks.com/matlabcentral/answers/328240-calculate-the-3d-angle-between-two-vectors
     for d = 1:fileLength
         HLeftv = HLeft(d,:)'; % Transform the first double into vert vector
@@ -118,18 +115,43 @@ for w = 1:length(filenames)
     MeanTrials(1,w) = mean(angle);
     MedianTrials(1,w) = median(angle);
     
+    %% Get angular rotation of the head
+    %   [origin, XYZ_rot, XYZ_rot_cont, rot_direction] = localRot(LF, LB, RF, RB, configuration)
+        [origin, XYZ_rot, XYZ_rot_cont, rot_direction] = localRot(HeadUke(:,:,1),HeadUke(:,:,2), HeadUke(:,:,3), HeadUke(:,:,4), 1);
+        
+   
+    %% Exporting rotation to text file
+     df_exp = num2cell(XYZ_rot);
+    FileName = 'xyzHeadAngle';
+    path = fullfile(pwd, '98_OutputUnity\');
+    filetype = '.csv';
+    filename = [path,FileName,filetype];
+    % First is to write diff for unity in first column
+    dlmwrite(filename,df_exp,'delimiter',',','newline', 'pc');
+        
+    
+    %% Exporting mean head marker (eye) to text file
+    df_exp = num2cell(average.HeadUke_c);
+    FileName = 'xyzHeadMean';
+    path = fullfile(pwd, '98_OutputUnity\');
+    filetype = '.csv';
+    filename = [path,FileName,filetype];
+    % First is to write diff for unity in first column
+    dlmwrite(filename,df_exp,'delimiter',',','newline', 'pc');
+    
+    %% Export all the head markers
+    for z = 1:size(HeadUke,3)
+    df_exp = num2cell(HeadUke(:,:,z));
+    %% Exporting to text file
+    FileName = strcat('xyzHead',num2str(z));
+    path = fullfile(pwd, '98_OutputUnity\');
+    filetype = '.csv';
+    filename = [path,FileName,filetype];
+    % First is to write diff for unity in first column
+    dlmwrite(filename,df_exp,'delimiter',',','newline', 'pc');
+    end  
     
 end
 
 % Initialize a figure with all the angle distributions
-q = figure;
-
-for b = 1:size(angleTable,1)
-    % Create sublpot for each trial
-    subplot(1,size(angleTable,1),b)
-    a = angleTable{b,:};
-    q = boxplot(a);
-    q = title(MedianTrials(1,b));
-end
-
-saveas(q,'99_Plots/boxplot.png')
+boxplotTrials(angleTable, MedianTrials,1,'Boxplot',1,'.png');

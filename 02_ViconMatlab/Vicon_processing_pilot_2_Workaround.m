@@ -93,7 +93,7 @@ for w = 1:length(filenames)
     average.RightHand_c = sum(RightHand,3)/size(RightHand,3);
     
     %% Visualize Markers in case needed
-    %     visualizeMarkers_andMeans(points,mean,pointsInfo,fileLength,400)
+    visualizeMarkers_andMeans(points,average,pointsInfo,fileLength,400,0)
    
     %% Calculate Angles between segments
     % Create a vector from Head to either hand
@@ -117,4 +117,4 @@ for w = 1:length(filenames)
 end
 
 %% Visualize
-boxplotTrials(angleTable, MedianTrials);
+boxplotTrials(angleTable, MedianTrials, plot_no, save_no);
