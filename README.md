@@ -1,10 +1,27 @@
-## ViconPupilIntegration
+﻿## ViconPupilIntegration
 
 The purpose is to provide a step by step implementation of a PupilEyeTracker into a Vicon environment
 
-### Markdown
+### Algorithm
+## Calibration
+- Subject stands in steady position, eye centered on calibration marker
+- Start Vicon capture
+- Get rotation from rigid body on first frame. This will be baseline yaw, pitch, and roll for world cordinates
+- Start Pupil capture
+- Set rotation of first frames to 0 (yaw and pitch of the eye)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- For each frame: Add the yaw and pitch of the eye to the rigid body rotation
+
+
+
+
+
+
+
+
+
+
+
 
 <!---
 ```markdown

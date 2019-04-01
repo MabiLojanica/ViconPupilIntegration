@@ -21,7 +21,7 @@ actualDir = cd;
 %% Necessary user input
 % Set path to the where the .c3d files are stored
 pName = fullfile(pwd,'03_Data', 'Participant');
-tName = fullfile(pName, 'Session_2', 'Condition_1');
+tName = fullfile(pName, 'Session_1', 'Condition_1');
 
 %% Read C3D
 % List all files ending with .c3d stored in the pName directory
