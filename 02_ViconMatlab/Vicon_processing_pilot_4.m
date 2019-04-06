@@ -21,7 +21,7 @@ actualDir = cd;
 %% Necessary user input
 % Set path to the where the .c3d files are stored
 pName = fullfile(pwd,'03_Data', 'Participant');
-tName = fullfile(pName, 'Session_1', 'Condition_1');
+tName = fullfile(pName, 'Session_3', 'Condition_1');
 
 %% Read C3D
 % List all files ending with .c3d stored in the pName directory
@@ -30,7 +30,7 @@ dir_struct = dir(fullfile(tName,'*.c3d'));
 [filenames,~] = sortrows({dir_struct.name}');
 trialnames = regexprep(filenames, '.c3d', ''); % Remove file extension
 
-for w = 1%:length(filenames)
+for w = 2%:length(filenames)
     % Get name of file currently processed
     fName = fullfile(tName,filenames{w});
     % Display name of currently processed file
@@ -49,7 +49,7 @@ for w = 1%:length(filenames)
     % The butter filter smoothes the data with input arguments
     points_filt = filterKinematicsButter(points,pointsInfo.frequency, ...
         10.5,40);
-   
+    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Start working with data from each file
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,12 +66,13 @@ for w = 1%:length(filenames)
     HeadUke = [];
     LeftHand = [];
     RightHand = [];
+    CalibrationCross = [];
     
     for s = 1:length(markerNames)
         string = markerNames{s};
         % Cycle trough each
         switch string
-            case {'HeadUke1','HeadUke2','HeadUke3','HeadUke4'}                      
+            case {'HeadUke1','HeadUke2','HeadUke3','HeadUke4'}
                 HeadUke =  cat(3,HeadUke,points.(string));
             case {'HeadTori1','HeadTori2','HeadTori3','HeadTori4'}
                 % Get all the xyz markers and stack in fourth dimension
@@ -81,6 +82,8 @@ for w = 1%:length(filenames)
                 LeftHand =  cat(3,LeftHand,points.(string));
             case {'RightHand1','RightHand2','RightHand3','RightHand4'}
                 RightHand =  cat(3,RightHand,points.(string));
+            case {'CalibrationCross1','CalibrationCross2','CalibrationCross3','CalibrationCross14','CalibrationCross15'}
+                CalibrationCross = cat(3,CalibrationCross,points.(string));
             otherwise
                 
         end
@@ -97,12 +100,22 @@ for w = 1%:length(filenames)
     %% Visualize Markers in case needed
     visualizeMarkers_andMeans(points,average,pointsInfo,fileLength,400,0)
     
+    %% Get synchronization
+    % distHands = average.LeftHand_c - average.RightHand_c;
+    % Get distance betweent the two points
+    for q = 1:fileLength
+        distHands(q,:) = norm(average.LeftHand_c(q,:) - average.RightHand_c(q,:));
+    end
+    
+  
+    % Arbitrary:
+    cut = 1545
     
     %% Create angle between HeadUke and Hands
     % Create a vector from Head to either hand
     HLeft = average.HeadUke_c - average.LeftHand_c;
     HRight = average.HeadUke_c - average.RightHand_c;
-   
+    
     % https://ch.mathworks.com/matlabcentral/answers/328240-calculate-the-3d-angle-between-two-vectors
     for d = 1:fileLength
         HLeftv = HLeft(d,:)'; % Transform the first double into vert vector
@@ -117,21 +130,21 @@ for w = 1%:length(filenames)
     
     %% Get angular rotation of the head
     %   [origin, XYZ_rot, XYZ_rot_cont, rot_direction] = localRot(LF, LB, RF, RB, configuration)
-        [origin, XYZ_rot, XYZ_rot_cont, rot_direction] = localRot(HeadUke(:,:,1),HeadUke(:,:,2), HeadUke(:,:,3), HeadUke(:,:,4), 1);
-        
-   
+    [origin, XYZ_rot, XYZ_rot_cont, rot_direction] = localRot(HeadUke(:,:,1),HeadUke(:,:,2), HeadUke(:,:,3), HeadUke(:,:,4), 1);
+    
+    
     %% Exporting rotation to text file
-     df_exp = num2cell(XYZ_rot);
+    df_exp = num2cell(XYZ_rot(cut:end,:));
     FileName = 'xyzHeadAngle';
     path = fullfile(pwd, '98_OutputUnity\');
     filetype = '.csv';
     filename = [path,FileName,filetype];
     % First is to write diff for unity in first column
     dlmwrite(filename,df_exp,'delimiter',',','newline', 'pc');
-        
+    
     
     %% Exporting mean head marker (eye) to text file
-    df_exp = num2cell(average.HeadUke_c);
+    df_exp = num2cell(average.HeadUke_c(cut:end,:));
     FileName = 'xyzHeadMean';
     path = fullfile(pwd, '98_OutputUnity\');
     filetype = '.csv';
@@ -141,17 +154,31 @@ for w = 1%:length(filenames)
     
     %% Export all the head markers
     for z = 1:size(HeadUke,3)
-    df_exp = num2cell(HeadUke(:,:,z));
-    %% Exporting to text file
-    FileName = strcat('xyzHead',num2str(z));
-    path = fullfile(pwd, '98_OutputUnity\');
-    filetype = '.csv';
-    filename = [path,FileName,filetype];
-    % First is to write diff for unity in first column
-    dlmwrite(filename,df_exp,'delimiter',',','newline', 'pc');
-    end  
+        df_exp = num2cell(HeadUke(:,:,z));
+        %% Exporting to text file
+        FileName = strcat('xyzHead',num2str(z));
+        path = fullfile(pwd, '98_OutputUnity\');
+        filetype = '.csv';
+        filename = [path,FileName,filetype];
+        % First is to write diff for unity in first column
+        dlmwrite(filename,df_exp(cut:end,:),'delimiter',',','newline', 'pc');
+    end
+    
+    
+    %% Export calibrationCrossMarkers
+    for z = 1:size(CalibrationCross,3)
+        df_exp = num2cell(CalibrationCross(:,:,z));
+        %% Exporting to text file
+        FileName = strcat('xyzCross',num2str(z));
+        path = fullfile(pwd, '98_OutputUnity\');
+        filetype = '.csv';
+        filename = [path,FileName,filetype];
+        % First is to write diff for unity in first column
+        dlmwrite(filename,df_exp(cut:end,:),'delimiter',',','newline', 'pc');
+    end
     
 end
 
+return % STOP
 % Initialize a figure with all the angle distributions
 boxplotTrials(angleTable, MedianTrials,1,'Boxplot',1,'.png');

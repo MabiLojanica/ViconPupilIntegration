@@ -20,18 +20,23 @@ actualDir = cd;
 
 %% Necessary user input
 % Set path to the where the .c3d files are stored
-% fPath = fullfile(pwd,'01_GazeDataRaw','gaze_positions_001.csv');
-% df = xlsread(fPath,'M:O');
+fPath = fullfile(pwd,'01_GazeDataRaw','gaze_positions_001.csv');
+df = xlsread(fPath,'M:O');
+conf = xlsread(fPath,'C:C');
 
 % Workaround: save to shorten reading
-% save('intermediate.mat','df', '-ascii');
+save('intermediate.mat','df', '-ascii');
 df = load('intermediate.mat', '-ascii');
 
 
 %% Filter data 
 order = 3;
 framelen = 121;
-df = sgolayfilt(df,order,framelen);
+df_filt = sgolayfilt(df,order,framelen);
+
+
+%% Arbitrary
+% df = df_filt(2717+1200:end,:);
 
 %% Visualize in Matlab
 visualizeVectors (df, 120 ,length(df),1,0);
@@ -75,10 +80,8 @@ dlmwrite(filename,df_deg_exp,'delimiter',',','newline', 'pc');
 
 %% Export vector3 to Unity
 df_exp = num2cell(df);
-
 % Exporting to text file
 FileName = 'xyzNormal';
-
 path = fullfile(pwd, '99_OutputUnity\');
 filetype = '.csv';
 filename = [path,FileName,filetype];
