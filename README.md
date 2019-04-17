@@ -2,9 +2,9 @@
 
 The purpose is to provide a step by step implementation of a PupilEyeTracker into a Vicon environment.
 This readme contains three parts:  
-Part 1: Setup for Vicon (Calibration, creating rigid body segments and tips for recording data).  
-Part 2: Setup for Pupil (Attaching reflective markers to the glass, calibrating the position of the tracker in space and calibrating gaze)  
-Part 3: Integration of movement data and gaze data. Here, measures from Vicon (movement data) and Pupil tracker (gaze data) are performed in Matlab. Follow the `integration.m` script to understand the calculations described here.  
+**Part 1:** Setup for Vicon (Calibration, creating rigid body segments and tips for recording data).  
+**Part 2:** Setup for Pupil (Attaching reflective markers to the glass, calibrating the position of the tracker in space and calibrating gaze)  
+**Part 3:** Integration of movement data and gaze data. Here, measures from Vicon (movement data) and Pupil tracker (gaze data) are performed in Matlab. Follow the `integration.m` script to understand the calculations described here.  
 
 ![Main](https://i.imgur.com/5ConwjF.png)
 
@@ -41,6 +41,18 @@ Pending
 Pending
 
 ### Section: Calculations of gaze Vector
+Pupil gaze data is stored as vectors in normalized space. In the [Pupil Documentation](https://docs.pupil-labs.com/#data-format), it is explained that the OpenGL convention is used. Normalized space is basically an imaginary cube, where the top right corner has coordinates [1 1] and the origin is at [0 0].  
+To work with the data, they need to be transformed to whats called [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system). For illustration, lets follow the illustration:  
+![Spherical](https://i.imgur.com/iuPbUw7.png)  
+A point in 3D space can be described by three spherical components:  
+- Its distance from the Origin, namely the Euclidean distance  
+- The azimuth (Phi), which is the deviation in the horizontal plane, depicted with the blue circle segment
+- The inclination (Theta), which is the deviation in the vertical plane, depicted with the red circle segment
+
+In the script, the gaze data is loaded and then transformed into azimuth and inclination. These are equivalent to Yaw and Pitch in Euler angles](https://en.wikipedia.org/wiki/Aircraft_principal_axes).  
+
+
+ 
 
 ### Section: Calculations of Head Vector
 
