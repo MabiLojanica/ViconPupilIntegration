@@ -52,7 +52,10 @@ A point in 3D space can be described by three spherical components:
 In the script, the gaze data is loaded and then transformed into azimuth and inclination. These are equivalent to Yaw and Pitch in Euler angles](https://en.wikipedia.org/wiki/Aircraft_principal_axes). In the following, the Euler Naming convenctions (Yaw, Pitch, and Roll) are used.
 
 This gives an understanding about how the eye is rotated in space relative to the calibration origin. To illustrate, use the following example:
-![YawPitch](https://i.imgur.com/eRw62HM.png)
+
+![YawPitch](https://i.imgur.com/eRw62HM.png)  
+
+
 The black star indicates the gaze calibration origin. This point has values of 0 for both Yaw and Pitch. As the gaze goes towards the right of the calibration cross, Yaw (blue) increases, while Pitch (red) decreases.
 
 To work with this data, lets assume: At the beginning of each calibration, the participant has his head in a neutral position and the gaze directed to the center of the calibration cross. I assume that the gaze vector in this position is [0 0]. All the eye movements happening after the calibration will be seen as relative to this gaze origin. This is done by subtracting all values from the first value:  
