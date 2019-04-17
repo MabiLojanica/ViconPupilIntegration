@@ -54,6 +54,7 @@ In the script, the gaze data is loaded and then transformed into azimuth and inc
 This gives an understanding about how the eye is rotated in space relative to the calibration origin. To illustrate, use the following example:
 
 ![YawPitch](https://i.imgur.com/eRw62HM.png)  
+<img src="https://i.imgur.com/eRw62HM.png" alt="YawPitch" width="300"/>
 
 
 The black star indicates the gaze calibration origin. This point has values of 0 for both Yaw and Pitch. As the gaze goes towards the right of the calibration cross, Yaw (blue) increases, while Pitch (red) decreases.
