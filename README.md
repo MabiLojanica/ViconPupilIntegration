@@ -40,16 +40,34 @@ Pending
 ### Section: Synchronization of the Pupil data and the Vicon data
 Pending
 
-### Section: Calculations of gaze Vector
+### Section: Calculations of gaze Vector 
 Pupil gaze data is stored as vectors in normalized space. In the [Pupil Documentation](https://docs.pupil-labs.com/#data-format), it is explained that the OpenGL convention is used. Normalized space is basically an imaginary cube, where the top right corner has coordinates [1 1] and the origin is at [0 0].  
 To work with the data, they need to be transformed to whats called [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system). For illustration, lets follow the illustration:  
-![Spherical](https://i.imgur.com/iuPbUw7.png)  
+![Spherical](https://i.imgur.com/iuPbUw7.png | width= 200)  
 A point in 3D space can be described by three spherical components:  
 - Its distance from the Origin, namely the Euclidean distance  
 - The azimuth (Phi), which is the deviation in the horizontal plane, depicted with the blue circle segment
 - The inclination (Theta), which is the deviation in the vertical plane, depicted with the red circle segment
 
-In the script, the gaze data is loaded and then transformed into azimuth and inclination. These are equivalent to Yaw and Pitch in Euler angles](https://en.wikipedia.org/wiki/Aircraft_principal_axes).  
+In the script, the gaze data is loaded and then transformed into azimuth and inclination. These are equivalent to Yaw and Pitch in Euler angles](https://en.wikipedia.org/wiki/Aircraft_principal_axes). In the following, the Euler Naming convenctions (Yaw, Pitch, and Roll) are used.
+
+This gives an understanding about how the eye is rotated in space relative to the calibration origin. To illustrate, use the following example:
+![YawPitch](https://i.imgur.com/eRw62HM.png | height = 300)
+The black star indicates the gaze calibration origin. This point has values of 0 for both Yaw and Pitch. As the gaze goes towards the right of the calibration cross, Yaw (blue) increases, while Pitch (red) decreases.
+
+To work with this data, lets assume: At the beginning of each calibration, the participant has his head in a neutral position and the gaze directed to the center of the calibration cross. I assume that the gaze vector in this position is [0 0]. All the eye movements happening after the calibration will be seen as relative to this gaze origin. This is done by subtracting all values from the first value:  
+`yaw = yaw - yaw(1,1);  
+pitch = pitch - pitch(1,1);`
+
+The result is the gaze Yaw and Pitch for each frame (Units: Degrees) relative to the first calibration frame, stored in `df_deg`.
+
+#### Calculation of the position and rotation of the Pupil tracker in space
+
+
+
+
+
+
 
 
  
