@@ -1,4 +1,4 @@
-%% Vicon Integration
+%% Vicon Integration Head Orientation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 'Integrating Vicon data of body segments and gaze data from Pupil eye 
 % tracker for algorithmic gaze detection'
@@ -87,32 +87,6 @@ for p = 1: length(Pfolders_cell)
         posData = orderfields(posData);
         marker_names = fieldnames(posData);
         
-        %% .csv Data
-        % Always look first, if the csv is already converted to .mat
-        % If not, convert it to .mat and load afterwards
-        if ~exists(matTrialnames_cell{t})
-            csvData  = xlsread(trialnames_cell{t});
-            save(csvData,csvTrialnames_cell{t}, '-ascii');
-        end
-        
-        % Load the entire data from the file
-        pupilData = load(csvTrialnames_cell{t}), '-ascii');
-        
-        % Subset the gaze data. Select normalized gaze vectors xyz
-        
-        % Select eye confidence
-        
-        % Select time to get the sampling frequency of pupil (120 odd)
-        
-        % Check if the loaded file is a calibration file. If so, calculate 
-        % the current offset for the gaze vector
-        if strcmp(trialnames{t}(6:10), 'cal') == 1
-            Calibration = cal;
-            vicon = CAL; 
-            continue
-        end
-        fps_mat = 256; % Sampling frequency of Pupil data set
-        
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Preprocess Data
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,21 +96,7 @@ for p = 1: length(Pfolders_cell)
         % Low-pass Butterworth Filter for structure of skeleton markers
         posData = filterKinematicsButter(posData,fps_pos,10.4,40);
 
-        %% Filter Eye confidence data
-        % How? Threshold?
-        % Low-pass Butterworth Filter for structure of skeleton markers
-        posData = filterKinematicsButter(posData,fps_pos,10.4,40);
-        
-        %% Filter gaze data
-        % Golay, remove peaks, butter?
-        % noise within frame or eye differences?
-
-        %% Resample Data
-        % Sample down data collected at higher fps to match that of lower fps
-        % Here, mat data sampled down to match positional data.
-        csvData = resampleData(fps_mat, fps_pos, csvData)';
-        
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Calculations Body segments
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
@@ -180,56 +140,7 @@ for p = 1: length(Pfolders_cell)
         average.HeadUke_c = sum(HeadUke,3)/size(HeadUke,3);
         average.LeftHand_c = sum(LeftHand,3)/size(LeftHand,3);
         average.RightHand_c = sum(RightHand,3)/size(RightHand,3);
-        
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % Synchronization of the Pupil data and the Vicon data
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-        %% Pupil
-        % Identify frame where trial starts in Pupil
-        % Get frame when eyes are closed and opened again (where trial starts)
-        eyesClosed = framenumber;
-        startPupil = framenumber2;
-        
-        %% Vicon
-        % Identify frame where trial starts in Vicon
-        startVicon = framenumber3;
-        
-        %% Select data from either
-        
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % Calculations of gaze Vector
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-       
-        %% Calculate spherical coordinates from Pupil data
-        % Get gaze angles from Vector as a difference from first frame
-        % Calculate Yaw / Azimuth
-        df_diff = df;
-        x = df_diff(:,1);
-        y = df_diff(:,2);
-        ratio = x./y;
-        yaw = rad2deg(atan(ratio));
-        % yaw(isnan(yaw) == 1) = 0;
-        % Transform the angle: All values are relative to the first frame
-        yaw = yaw - yaw(1,1);
-        
-        % Calculate pitch / Inclination
-        z = df(:,3);
-        pitch = rad2deg(atan(z ./ y));
-        % pitch(isnan(pitch) == 1) = 0;
-        pitch = pitch - pitch(1,1);
-        
-        % Add to double array
-        df_deg(:,1) = yaw;
-        df_deg(:,2) = pitch;
-        
-        
-        %% Get angular rotation of the head
-        % Create a rotation matrix around the center of the head markers   ? Shouldnt be the center
-        [origin, XYZ_rot,~, rot_direction] = localRot(HeadUke(:,:,1),HeadUke(:,:,2), HeadUke(:,:,3), HeadUke(:,:,4), 1);
-        
-        
-        
+
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Calculations of Head Vector
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
