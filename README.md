@@ -43,7 +43,8 @@ Pending
 ### Section: Calculations of gaze Vector 
 Pupil gaze data is stored as vectors in normalized space. In the [Pupil Documentation](https://docs.pupil-labs.com/#data-format), it is explained that the OpenGL convention is used. Normalized space is basically an imaginary cube, where the top right corner has coordinates [1 1] and the origin is at [0 0].  
 To work with the data, they need to be transformed to whats called [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system). For illustration, lets follow the illustration:  
-![Spherical](https://i.imgur.com/iuPbUw7.png)  
+<!-- ![Spherical](https://i.imgur.com/iuPbUw7.png)  -->
+<img src="https://i.imgur.com/iuPbUw7.png" alt="Spherical" width="300"/>
 A point in 3D space can be described by three spherical components:  
 - Its distance from the Origin, namely the Euclidean distance  
 - The azimuth (Phi), which is the deviation in the horizontal plane, depicted with the blue circle segment
@@ -53,7 +54,7 @@ In the script, the gaze data is loaded and then transformed into azimuth and inc
 
 This gives an understanding about how the eye is rotated in space relative to the calibration origin. To illustrate, use the following example:
 
-![YawPitch](https://i.imgur.com/eRw62HM.png)  
+<!-- ![YawPitch](https://i.imgur.com/eRw62HM.png)  -->
 <img src="https://i.imgur.com/eRw62HM.png" alt="YawPitch" width="300"/>
 
 
