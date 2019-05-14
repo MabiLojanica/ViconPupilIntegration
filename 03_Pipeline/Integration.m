@@ -123,7 +123,6 @@ for p = 1: length(Pfolders_cell)
         posData = filterKinematicsButter(posData,fps_pos,10.4,40);
 
         %% Filter Eye confidence data
-        % How? Threshold?
         % Low-pass Butterworth Filter for structure of skeleton markers
         posData = filterKinematicsButter(posData,fps_pos,10.4,40);
         
