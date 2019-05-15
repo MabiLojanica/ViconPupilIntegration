@@ -1,5 +1,5 @@
 # Ignore data folder
-04_MariaData/
+04_DataJudo
 
 # Latex specific ignores
 *.gz

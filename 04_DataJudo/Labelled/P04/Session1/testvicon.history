@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<Trial name="testvicon" notes="">
-
-  <Parameters>
-    <Param header="0" name="Capture Date" value="2019-Apr-10 14:37:21"/>
-    <Param header="0" name="x2d" value="testvicon.x2d"/>
-  </Parameters>
-
-</Trial>
