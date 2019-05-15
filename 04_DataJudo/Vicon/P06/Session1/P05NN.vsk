@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<KinematicModel VERSION="3.2">
+	<Parameters>
+		<Parameter NAME="ToriHead_CalibrationCross_x" VALUE="-1703.4200439453125" PRIOR="-1703.4188232421875" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_CalibrationCross_y" VALUE="-293.05300903320312" PRIOR="-293.05267333984375" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_CalibrationCross_z" VALUE="-2650.239990234375" PRIOR="-2650.244384765625" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_UkeHead_x" VALUE="-1101.5400390625" PRIOR="-1101.53564453125" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_UkeHead_y" VALUE="-1983.199951171875" PRIOR="-1983.1959228515625" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_UkeHead_z" VALUE="-1252.8800048828125" PRIOR="-1252.8848876953125" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_LeftHand_x" VALUE="-756.083984375" PRIOR="-756.0841064453125" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_LeftHand_y" VALUE="314.71099853515625" PRIOR="314.71133422851563" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_LeftHand_z" VALUE="-22.424400329589844" PRIOR="-22.424352645874023" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_RightHand_x" VALUE="-701.5059814453125" PRIOR="-701.50634765625" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_RightHand_y" VALUE="78.732398986816406" PRIOR="78.732429504394531" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_RightHand_z" VALUE="296.218994140625" PRIOR="296.21871948242187" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead1_x" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead1_y" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead1_z" VALUE="-0" PRIOR="-0" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead2_x" VALUE="-3.5527100789104751e-015" PRIOR="-3.5527136788005009e-015" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead2_y" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead2_z" VALUE="-118.0260009765625" PRIOR="-118.02590179443359" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead3_x" VALUE="-7.1054298986998436e-015" PRIOR="-7.1054273576010019e-015" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead3_y" VALUE="176.66799926757813" PRIOR="176.66758728027344" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead3_z" VALUE="-73.3009033203125" PRIOR="-73.300857543945313" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead4_x" VALUE="2.8425300121307373" PRIOR="2.8425250053405762" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead4_y" VALUE="109.70200347900391" PRIOR="109.70240020751953" HIDDEN="true"/>
+		<Parameter NAME="ToriHead_ToriHead4_z" VALUE="-134.78799438476562" PRIOR="-134.78811645507812" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross1_x" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross1_y" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross1_z" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross2_x" VALUE="-4.440889980918258e-016" PRIOR="-4.4408920985006262e-016" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross2_y" VALUE="4.440889980918258e-016" PRIOR="4.4408920985006262e-016" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross2_z" VALUE="-300.375" PRIOR="-300.37533569335937" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross3_x" VALUE="8.8817799618365161e-016" PRIOR="8.8817841970012523e-016" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross3_y" VALUE="6.0720901489257813" PRIOR="6.0720853805541992" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross3_z" VALUE="387.7919921875" PRIOR="387.79159545898437" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross4_x" VALUE="299.99700927734375" PRIOR="299.99664306640625" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross4_y" VALUE="229.21499633789063" PRIOR="229.21525573730469" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross4_z" VALUE="11.540499687194824" PRIOR="11.540470123291016" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross5_x" VALUE="-297.39599609375" PRIOR="-297.396484375" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross5_y" VALUE="-220.85800170898437" PRIOR="-220.85777282714844" HIDDEN="true"/>
+		<Parameter NAME="CalibrationCross_CalibrationCross5_z" VALUE="1.1786899566650391" PRIOR="1.1786916255950928" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead1_x" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead1_y" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead1_z" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead2_x" VALUE="8.8817799618365161e-016" PRIOR="8.8817841970012523e-016" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead2_y" VALUE="3.5527100789104751e-015" PRIOR="3.5527136788005009e-015" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead2_z" VALUE="-55.921001434326172" PRIOR="-55.920993804931641" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead3_x" VALUE="-2.2204500197172533e-016" PRIOR="-2.2204460492503131e-016" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead3_y" VALUE="147.62899780273437" PRIOR="147.62869262695312" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead3_z" VALUE="30.762800216674805" PRIOR="30.762760162353516" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead4_x" VALUE="1.9326200485229492" PRIOR="1.9326189756393433" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead4_y" VALUE="168.71499633789062" PRIOR="168.71528625488281" HIDDEN="true"/>
+		<Parameter NAME="UkeHead_UkeHead4_z" VALUE="-19.765499114990234" PRIOR="-19.765514373779297" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand1_x" VALUE="-0" PRIOR="-0" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand1_y" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand1_z" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand2_x" VALUE="-3.5527100789104751e-015" PRIOR="-3.5527136788005009e-015" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand2_y" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand2_z" VALUE="-75.322303771972656" PRIOR="-75.322265625" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand3_x" VALUE="1.7763600157738027e-015" PRIOR="1.7763568394002505e-015" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand3_y" VALUE="58.128200531005859" PRIOR="58.128215789794922" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand3_z" VALUE="-55.999599456787109" PRIOR="-55.9996337890625" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand4_x" VALUE="6.0179600715637207" PRIOR="6.0179619789123535" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand4_y" VALUE="58.972400665283203" PRIOR="58.972370147705078" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand4_z" VALUE="-9.1887197494506836" PRIOR="-9.1887235641479492" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand5_x" VALUE="-40.426200866699219" PRIOR="-40.426158905029297" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand5_y" VALUE="-278.7080078125" PRIOR="-278.708251953125" HIDDEN="true"/>
+		<Parameter NAME="LeftHand_LeftHand5_z" VALUE="-87.696502685546875" PRIOR="-87.696548461914063" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand1_x" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand1_y" VALUE="-0" PRIOR="-0" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand1_z" VALUE="0" PRIOR="0" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand2_x" VALUE="-8.8817799618365161e-016" PRIOR="-8.8817841970012523e-016" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand2_y" VALUE="1.7763600157738027e-015" PRIOR="1.7763568394002505e-015" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand2_z" VALUE="-31.836799621582031" PRIOR="-31.836837768554688" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand3_x" VALUE="3.3306699209084169e-015" PRIOR="3.3306690738754696e-015" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand3_y" VALUE="43.794101715087891" PRIOR="43.794086456298828" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand3_z" VALUE="-81.995903015136719" PRIOR="-81.99591064453125" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand4_x" VALUE="-22.341800689697266" PRIOR="-22.341840744018555" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand4_y" VALUE="68.812400817871094" PRIOR="68.812400817871094" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand4_z" VALUE="-34.021198272705078" PRIOR="-34.021152496337891" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand5_x" VALUE="-175.46600341796875" PRIOR="-175.46612548828125" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand5_y" VALUE="131.06900024414062" PRIOR="131.06938171386719" HIDDEN="true"/>
+		<Parameter NAME="RightHand_RightHand5_z" VALUE="222.66799926757812" PRIOR="222.6678466796875" HIDDEN="true"/>
+	</Parameters>
+	<Skeleton RGB="93 93 93">
+		<Segment NAME="ToriHead" OPACITY="255" BOUNDS="-11.8025904 -11.8025904 -118.025902 11.8025904 11.8025904 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="false" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+			<JointFree NAME="World_ToriHead" PRE-ORIENTATION="0 0 0" PRE-POSITION="0 0 0" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="0 0 0" MEAN="0 0 0 0 0 0" COVARIANCE="2.464900016784668 0 0 0 0 0 0 2.464900016784668 0 0 0 0 0 0 246.49000549316406 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000" T="* * * * * *" SIGNS="+ + + + + +" RANGE-CENTRING-STATE="0 0 0 0 0 0" RANGE-MATRIX="29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000">
+				<JointTemplate MEAN="0 0 0 0 0 0" COVARIANCE="2.464900016784668 0 0 0 0 0 0 2.464900016784668 0 0 0 0 0 0 246.49000549316406 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000" TPOSE-MEAN="0 0 0 0 0 0" TPOSE-COVARIANCE="0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612" PRE-ORIENTATION="0 0 0" PRE-POSITION="0 0 0" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="0 0 0"/>
+			</JointFree>
+			<Segment NAME="CalibrationCross" OPACITY="255" BOUNDS="-30.0375347 -30.0375347 -300.375336 30.0375347 30.0375347 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="false" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+				<JointFree NAME="ToriHead_CalibrationCross" PRE-ORIENTATION="-1.07859814 0.12632380400000001 -0.66930663599999995" PRE-POSITION="-1703.4200439453125 -293.05300903320312 -2650.239990234375" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="-0 0 0" MEAN="0 0 0 0 0 0" COVARIANCE="1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000" T="* * * * * *" SIGNS="+ + + + + +" RANGE-CENTRING-STATE="0 0 0 0 0 0" RANGE-MATRIX="29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000">
+					<JointTemplate MEAN="0 0 0 0 0 0" COVARIANCE="2.464900016784668 0 0 0 0 0 0 2.464900016784668 0 0 0 0 0 0 246.49000549316406 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000" TPOSE-MEAN="0 0 0 0 0 0" TPOSE-COVARIANCE="0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612" PRE-ORIENTATION="-1.07859814 0.126323804 -0.669306636" PRE-POSITION="'ToriHead_CalibrationCross_x' 'ToriHead_CalibrationCross_y' 'ToriHead_CalibrationCross_z'" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="-0 0 0"/>
+				</JointFree>
+			</Segment>
+			<Segment NAME="UkeHead" OPACITY="255" BOUNDS="-5.59209967 -5.59209967 -55.9209938 5.59209967 5.59209967 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="false" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+				<JointFree NAME="ToriHead_UkeHead" PRE-ORIENTATION="-1.26209664 0.58005589199999996 -0.014454455999999999" PRE-POSITION="-1101.5400390625 -1983.199951171875 -1252.8800048828125" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="0 0 0" MEAN="0 0 0 0 0 0" COVARIANCE="1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000" T="* * * * * *" SIGNS="+ + + + + +" RANGE-CENTRING-STATE="0 0 0 0 0 0" RANGE-MATRIX="29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000">
+					<JointTemplate MEAN="0 0 0 0 0 0" COVARIANCE="2.464900016784668 0 0 0 0 0 0 2.464900016784668 0 0 0 0 0 0 246.49000549316406 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000" TPOSE-MEAN="0 0 0 0 0 0" TPOSE-COVARIANCE="0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612" PRE-ORIENTATION="-1.26209664 0.580055892 -0.014454456" PRE-POSITION="'ToriHead_UkeHead_x' 'ToriHead_UkeHead_y' 'ToriHead_UkeHead_z'" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="0 0 0"/>
+				</JointFree>
+			</Segment>
+			<Segment NAME="LeftHand" OPACITY="255" BOUNDS="-7.53222656 -7.53222656 -75.3222656 7.53222656 7.53222656 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 0 0" HIDDEN="false" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+				<JointFree NAME="ToriHead_LeftHand" PRE-ORIENTATION="1.0838239199999999 -1.1513701700000001 1.3932918299999999" PRE-POSITION="-756.083984375 314.71099853515625 -22.424400329589844" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="-0 0 0" MEAN="0 0 0 0 0 0" COVARIANCE="1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000" T="* * * * * *" SIGNS="+ + + + + +" RANGE-CENTRING-STATE="0 0 0 0 0 0" RANGE-MATRIX="29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000">
+					<JointTemplate MEAN="0 0 0 0 0 0" COVARIANCE="2.464900016784668 0 0 0 0 0 0 2.464900016784668 0 0 0 0 0 0 246.49000549316406 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000" TPOSE-MEAN="0 0 0 0 0 0" TPOSE-COVARIANCE="0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612" PRE-ORIENTATION="1.08382392 -1.15137017 1.39329183" PRE-POSITION="'ToriHead_LeftHand_x' 'ToriHead_LeftHand_y' 'ToriHead_LeftHand_z'" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="-0 0 0"/>
+				</JointFree>
+			</Segment>
+			<Segment NAME="RightHand" OPACITY="255" BOUNDS="-3.18368387 -3.18368387 -31.8368378 3.18368387 3.18368387 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="0 255 0" HIDDEN="false" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+				<JointFree NAME="ToriHead_RightHand" PRE-ORIENTATION="0.74173623300000002 2.13892317 0.78450983799999996" PRE-POSITION="-701.5059814453125 78.732398986816406 296.218994140625" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="0 0 0" MEAN="0 0 0 0 0 0" COVARIANCE="1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 1.0955111980438232 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000 0 0 0 0 0 0 10000" T="* * * * * *" SIGNS="+ + + + + +" RANGE-CENTRING-STATE="0 0 0 0 0 0" RANGE-MATRIX="29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 29.60881233215332 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000 0 0 0 0 0 0 100000000">
+					<JointTemplate MEAN="0 0 0 0 0 0" COVARIANCE="2.464900016784668 0 0 0 0 0 0 2.464900016784668 0 0 0 0 0 0 246.49000549316406 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000 0 0 0 0 0 0 1000000" TPOSE-MEAN="0 0 0 0 0 0" TPOSE-COVARIANCE="0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612 0 0 0 0 0 0 0.10000000149011612" PRE-ORIENTATION="0.741736233 2.13892317 0.784509838" PRE-POSITION="'ToriHead_RightHand_x' 'ToriHead_RightHand_y' 'ToriHead_RightHand_z'" INVERSE-POST-ORIENTATION="0 0 0" INVERSE-POST-POSITION="0 0 0"/>
+				</JointFree>
+			</Segment>
+		</Segment>
+	</Skeleton>
+	<MarkerSet>
+		<Markers>
+			<Marker NAME="CalibrationCross1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="CalibrationCross2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="CalibrationCross3" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="CalibrationCross4" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker NAME="CalibrationCross5" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker NAME="ToriHead1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="ToriHead2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="ToriHead3" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="ToriHead4" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker NAME="UkeHead1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="UkeHead2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="UkeHead3" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="UkeHead4" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker NAME="LeftHand1" RADIUS="12.5" RGB="255 0 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="LeftHand2" RADIUS="12.5" RGB="255 0 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="LeftHand3" RADIUS="12.5" RGB="255 0 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="LeftHand4" RADIUS="12.5" RGB="255 0 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker NAME="LeftHand5" RADIUS="12.5" RGB="255 0 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker NAME="RightHand1" RADIUS="12.5" RGB="0 255 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="RightHand2" RADIUS="12.5" RGB="0 255 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="RightHand3" RADIUS="12.5" RGB="0 255 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="RightHand4" RADIUS="12.5" RGB="0 255 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker NAME="RightHand5" RADIUS="12.5" RGB="0 255 0" STATUS="optional" VIEW-ANGLE="0"/>
+		</Markers>
+		<Sticks>
+			<Stick MARKER1="CalibrationCross1" MARKER2="CalibrationCross2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross1" MARKER2="CalibrationCross3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross1" MARKER2="CalibrationCross4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross1" MARKER2="CalibrationCross5" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross2" MARKER2="CalibrationCross3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross2" MARKER2="CalibrationCross4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross2" MARKER2="CalibrationCross5" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross3" MARKER2="CalibrationCross4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross3" MARKER2="CalibrationCross5" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="CalibrationCross4" MARKER2="CalibrationCross5" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="ToriHead1" MARKER2="ToriHead2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="ToriHead1" MARKER2="ToriHead3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="ToriHead1" MARKER2="ToriHead4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="ToriHead2" MARKER2="ToriHead3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="ToriHead2" MARKER2="ToriHead4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="ToriHead3" MARKER2="ToriHead4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="UkeHead1" MARKER2="UkeHead2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="UkeHead1" MARKER2="UkeHead3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="UkeHead1" MARKER2="UkeHead4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="UkeHead2" MARKER2="UkeHead3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="UkeHead2" MARKER2="UkeHead4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="UkeHead3" MARKER2="UkeHead4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LeftHand1" MARKER2="LeftHand2" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand1" MARKER2="LeftHand3" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand1" MARKER2="LeftHand4" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand1" MARKER2="LeftHand5" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand2" MARKER2="LeftHand3" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand2" MARKER2="LeftHand4" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand2" MARKER2="LeftHand5" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand3" MARKER2="LeftHand4" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand3" MARKER2="LeftHand5" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="LeftHand4" MARKER2="LeftHand5" RGB1="255 0 0" RGB2="255 0 0"/>
+			<Stick MARKER1="RightHand1" MARKER2="RightHand2" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand1" MARKER2="RightHand3" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand1" MARKER2="RightHand4" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand1" MARKER2="RightHand5" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand2" MARKER2="RightHand3" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand2" MARKER2="RightHand4" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand2" MARKER2="RightHand5" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand3" MARKER2="RightHand4" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand3" MARKER2="RightHand5" RGB1="0 255 0" RGB2="0 255 0"/>
+			<Stick MARKER1="RightHand4" MARKER2="RightHand5" RGB1="0 255 0" RGB2="0 255 0"/>
+		</Sticks>
+	</MarkerSet>
+	<TargetSet>
+		<Targets>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="CalibrationCross1" OPACITY="255" POSITION="'CalibrationCross_CalibrationCross1_x' 'CalibrationCross_CalibrationCross1_y' 'CalibrationCross_CalibrationCross1_z'" RGB="93 93 93" SEGMENT="CalibrationCross" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="CalibrationCross2" OPACITY="255" POSITION="'CalibrationCross_CalibrationCross2_x' 'CalibrationCross_CalibrationCross2_y' 'CalibrationCross_CalibrationCross2_z'" RGB="93 93 93" SEGMENT="CalibrationCross" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="CalibrationCross3" OPACITY="255" POSITION="'CalibrationCross_CalibrationCross3_x' 'CalibrationCross_CalibrationCross3_y' 'CalibrationCross_CalibrationCross3_z'" RGB="93 93 93" SEGMENT="CalibrationCross" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="CalibrationCross4" OPACITY="255" POSITION="'CalibrationCross_CalibrationCross4_x' 'CalibrationCross_CalibrationCross4_y' 'CalibrationCross_CalibrationCross4_z'" RGB="93 93 93" SEGMENT="CalibrationCross" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="CalibrationCross5" OPACITY="255" POSITION="'CalibrationCross_CalibrationCross5_x' 'CalibrationCross_CalibrationCross5_y' 'CalibrationCross_CalibrationCross5_z'" RGB="93 93 93" SEGMENT="CalibrationCross" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="ToriHead1" OPACITY="255" POSITION="'ToriHead_ToriHead1_x' 'ToriHead_ToriHead1_y' 'ToriHead_ToriHead1_z'" RGB="93 93 93" SEGMENT="ToriHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="ToriHead2" OPACITY="255" POSITION="'ToriHead_ToriHead2_x' 'ToriHead_ToriHead2_y' 'ToriHead_ToriHead2_z'" RGB="93 93 93" SEGMENT="ToriHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="ToriHead3" OPACITY="255" POSITION="'ToriHead_ToriHead3_x' 'ToriHead_ToriHead3_y' 'ToriHead_ToriHead3_z'" RGB="93 93 93" SEGMENT="ToriHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="ToriHead4" OPACITY="255" POSITION="'ToriHead_ToriHead4_x' 'ToriHead_ToriHead4_y' 'ToriHead_ToriHead4_z'" RGB="93 93 93" SEGMENT="ToriHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="UkeHead1" OPACITY="255" POSITION="'UkeHead_UkeHead1_x' 'UkeHead_UkeHead1_y' 'UkeHead_UkeHead1_z'" RGB="93 93 93" SEGMENT="UkeHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="UkeHead2" OPACITY="255" POSITION="'UkeHead_UkeHead2_x' 'UkeHead_UkeHead2_y' 'UkeHead_UkeHead2_z'" RGB="93 93 93" SEGMENT="UkeHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="UkeHead3" OPACITY="255" POSITION="'UkeHead_UkeHead3_x' 'UkeHead_UkeHead3_y' 'UkeHead_UkeHead3_z'" RGB="93 93 93" SEGMENT="UkeHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="UkeHead4" OPACITY="255" POSITION="'UkeHead_UkeHead4_x' 'UkeHead_UkeHead4_y' 'UkeHead_UkeHead4_z'" RGB="93 93 93" SEGMENT="UkeHead" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="LeftHand1" OPACITY="255" POSITION="'LeftHand_LeftHand1_x' 'LeftHand_LeftHand1_y' 'LeftHand_LeftHand1_z'" RGB="93 93 93" SEGMENT="LeftHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="LeftHand2" OPACITY="255" POSITION="'LeftHand_LeftHand2_x' 'LeftHand_LeftHand2_y' 'LeftHand_LeftHand2_z'" RGB="93 93 93" SEGMENT="LeftHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="LeftHand3" OPACITY="255" POSITION="'LeftHand_LeftHand3_x' 'LeftHand_LeftHand3_y' 'LeftHand_LeftHand3_z'" RGB="93 93 93" SEGMENT="LeftHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="LeftHand4" OPACITY="255" POSITION="'LeftHand_LeftHand4_x' 'LeftHand_LeftHand4_y' 'LeftHand_LeftHand4_z'" RGB="93 93 93" SEGMENT="LeftHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="LeftHand5" OPACITY="255" POSITION="'LeftHand_LeftHand5_x' 'LeftHand_LeftHand5_y' 'LeftHand_LeftHand5_z'" RGB="93 93 93" SEGMENT="LeftHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="RightHand1" OPACITY="255" POSITION="'RightHand_RightHand1_x' 'RightHand_RightHand1_y' 'RightHand_RightHand1_z'" RGB="93 93 93" SEGMENT="RightHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="RightHand2" OPACITY="255" POSITION="'RightHand_RightHand2_x' 'RightHand_RightHand2_y' 'RightHand_RightHand2_z'" RGB="93 93 93" SEGMENT="RightHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="RightHand3" OPACITY="255" POSITION="'RightHand_RightHand3_x' 'RightHand_RightHand3_y' 'RightHand_RightHand3_z'" RGB="93 93 93" SEGMENT="RightHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="RightHand4" OPACITY="255" POSITION="'RightHand_RightHand4_x' 'RightHand_RightHand4_y' 'RightHand_RightHand4_z'" RGB="93 93 93" SEGMENT="RightHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="false" GAUSSIAN="true" HIDDEN="false" MARKER="RightHand5" OPACITY="255" POSITION="'RightHand_RightHand5_x' 'RightHand_RightHand5_y' 'RightHand_RightHand5_z'" RGB="93 93 93" SEGMENT="RightHand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+		</Targets>
+	</TargetSet>
+</KinematicModel>
+

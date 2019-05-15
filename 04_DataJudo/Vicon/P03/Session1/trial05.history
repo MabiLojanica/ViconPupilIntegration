@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Trial name="trial05" notes="">
+
+  <Parameters>
+    <Param header="0" name="Capture Date" value="2019-Apr-10 13:51:16"/>
+    <Param header="0" name="x2d" value="trial05.x2d"/>
+  </Parameters>
+
+  <Run name="" notes="">
+    <Parameters>
+      <Param header="0" name="Version" value="2.5.0.93422h"/>
+      <Param header="0" name="Start Date" value="2019-Apr-24 14:24:00"/>
+    </Parameters>
+    <OperationType name="Core Processing" notes="">
+      <OperationSubType name="Combined Processing" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:24:00"/>
+          <Param header="1" name="Frame Range" value=""/>
+          <Param header="0" name="First Frame" value="1"/>
+          <Param header="0" name="Last Frame" value="2386"/>
+          <Param header="1" name="General" value=""/>
+          <Param header="0" name="Processing Output level" value="Labels"/>
+          <Param header="1" name="Grayscale Circle Fitting" value=""/>
+          <Param header="0" name="Enable" value="Yes"/>
+          <Param header="0" name="Circularity Threshold Tweak" value="0"/>
+          <Param header="1" name="Reconstruction" value=""/>
+          <Param header="0" name="3D Predictions" value="Yes"/>
+          <Param header="0" name="Environmental Drift Tolerance" value="1.5"/>
+          <Param header="0" name="Minimum Cameras to Start Trajectory" value="3"/>
+          <Param header="0" name="Minimum Cameras to Continue Trajectory" value="2"/>
+          <Param header="0" name="Reconstruction Minimum Separation" value="14"/>
+          <Param header="0" name="Minimum Centroid Radius" value="0"/>
+          <Param header="0" name="Maximum Centroid Radius" value="50"/>
+          <Param header="0" name="Minimum Reconstruction Radius" value="0"/>
+          <Param header="0" name="Maximum Reconstruction Radius" value="1000"/>
+          <Param header="0" name="Volume min X" value="-100000"/>
+          <Param header="0" name="Volume min Y" value="-100000"/>
+          <Param header="0" name="Volume min Z" value="-100000"/>
+          <Param header="0" name="Volume max X" value="100000"/>
+          <Param header="0" name="Volume max Y" value="100000"/>
+          <Param header="0" name="Volume max Z" value="100000"/>
+          <Param header="1" name="Trajectory Tracking" value=""/>
+          <Param header="0" name="Trajectory Startup Error" value="150"/>
+          <Param header="0" name="Trajectory Prediction Error" value="150"/>
+          <Param header="0" name="Max Trajectory Length to Delete" value="0"/>
+          <Param header="1" name="Labeling" value=""/>
+          <Param header="0" name="Label completeness entrance threshold" value="0.84999999999999998"/>
+          <Param header="0" name="Label completeness exit threshold" value="0.59999999999999998"/>
+          <Param header="0" name="Booting quality" value="0"/>
+          <Param header="0" name="Booting versus tracking" value="0.5"/>
+          <Param header="0" name="Tracking quality" value="0"/>
+          <Param header="0" name="Smoothing factor" value="1"/>
+          <Param header="0" name="Joint Ranges Slack" value="1"/>
+          <Param header="0" name="Enforce Joint Ranges" value="Yes"/>
+          <Param header="0" name="Single pass" value="Yes"/>
+          <Param header="1" name="Kinematic Fitting" value=""/>
+          <Param header="0" name="Prior importance" value="25"/>
+          <Param header="0" name="Mean-pose ratio" value="1"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:24:55"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="271"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:24:56"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="271"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:20"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="97"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:21"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="97"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead3" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:22"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead3"/>
+          <Param header="0" name="Frame" value="97"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:23"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead4"/>
+          <Param header="0" name="Frame" value="97"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:38"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="262"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:39"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="262"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead3" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:40"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead3"/>
+          <Param header="0" name="Frame" value="262"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:40"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead4"/>
+          <Param header="0" name="Frame" value="262"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:50"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="1"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:51"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="1"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead3" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:25:52"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead3"/>
+          <Param header="0" name="Frame" value="1"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead3" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:08"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead3"/>
+          <Param header="0" name="Frame" value="260"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:12"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="260"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:13"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="260"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead3" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:14"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead3"/>
+          <Param header="0" name="Frame" value="260"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:14"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead4"/>
+          <Param header="0" name="Frame" value="260"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:29"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="878"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:35"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="878"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:35"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="878"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead3" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:36"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead3"/>
+          <Param header="0" name="Frame" value="878"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:36"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead4"/>
+          <Param header="0" name="Frame" value="878"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:58"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="1742"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:26:59"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="1742"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead1" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:27:16"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead1"/>
+          <Param header="0" name="Frame" value="1808"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P03Maximus:ToriHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-24 14:27:17"/>
+          <Param header="0" name="Label" value="P03Maximus:ToriHead2"/>
+          <Param header="0" name="Frame" value="1808"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+  </Run>
+
+</Trial>

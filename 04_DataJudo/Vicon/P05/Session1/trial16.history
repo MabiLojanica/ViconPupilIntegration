@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Trial name="trial16" notes="">
+
+  <Parameters>
+    <Param header="0" name="Capture Date" value="2019-Apr-11 17:11:35"/>
+    <Param header="0" name="x2d" value="trial16.x2d"/>
+  </Parameters>
+
+  <Run name="" notes="">
+    <Parameters>
+      <Param header="0" name="Version" value="2.5.0.93422h"/>
+      <Param header="0" name="Start Date" value="2019-May-06 08:57:58"/>
+    </Parameters>
+    <OperationType name="Core Processing" notes="">
+      <OperationSubType name="Combined Processing" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-06 08:57:58"/>
+          <Param header="1" name="Frame Range" value=""/>
+          <Param header="0" name="First Frame" value="1"/>
+          <Param header="0" name="Last Frame" value="2191"/>
+          <Param header="1" name="General" value=""/>
+          <Param header="0" name="Processing Output level" value="Labels"/>
+          <Param header="1" name="Grayscale Circle Fitting" value=""/>
+          <Param header="0" name="Enable" value="Yes"/>
+          <Param header="0" name="Circularity Threshold Tweak" value="0"/>
+          <Param header="1" name="Reconstruction" value=""/>
+          <Param header="0" name="3D Predictions" value="Yes"/>
+          <Param header="0" name="Environmental Drift Tolerance" value="1.5"/>
+          <Param header="0" name="Minimum Cameras to Start Trajectory" value="3"/>
+          <Param header="0" name="Minimum Cameras to Continue Trajectory" value="2"/>
+          <Param header="0" name="Reconstruction Minimum Separation" value="14"/>
+          <Param header="0" name="Minimum Centroid Radius" value="0"/>
+          <Param header="0" name="Maximum Centroid Radius" value="50"/>
+          <Param header="0" name="Minimum Reconstruction Radius" value="0"/>
+          <Param header="0" name="Maximum Reconstruction Radius" value="1000"/>
+          <Param header="0" name="Volume min X" value="-100000"/>
+          <Param header="0" name="Volume min Y" value="-100000"/>
+          <Param header="0" name="Volume min Z" value="-100000"/>
+          <Param header="0" name="Volume max X" value="100000"/>
+          <Param header="0" name="Volume max Y" value="100000"/>
+          <Param header="0" name="Volume max Z" value="100000"/>
+          <Param header="1" name="Trajectory Tracking" value=""/>
+          <Param header="0" name="Trajectory Startup Error" value="150"/>
+          <Param header="0" name="Trajectory Prediction Error" value="150"/>
+          <Param header="0" name="Max Trajectory Length to Delete" value="0"/>
+          <Param header="1" name="Labeling" value=""/>
+          <Param header="0" name="Label completeness entrance threshold" value="0.84999999999999998"/>
+          <Param header="0" name="Label completeness exit threshold" value="0.59999999999999998"/>
+          <Param header="0" name="Booting quality" value="0"/>
+          <Param header="0" name="Booting versus tracking" value="0.5"/>
+          <Param header="0" name="Tracking quality" value="0"/>
+          <Param header="0" name="Smoothing factor" value="1"/>
+          <Param header="0" name="Joint Ranges Slack" value="1"/>
+          <Param header="0" name="Enforce Joint Ranges" value="Yes"/>
+          <Param header="0" name="Single pass" value="Yes"/>
+          <Param header="1" name="Kinematic Fitting" value=""/>
+          <Param header="0" name="Prior importance" value="25"/>
+          <Param header="0" name="Mean-pose ratio" value="1"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="Unlabel Trajectory Forwards - P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:24:24"/>
+          <Param header="0" name="Trajectory" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Unlabeled from" value="1710"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:24:34"/>
+          <Param header="0" name="Label" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Frame" value="1711"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:24:44"/>
+          <Param header="0" name="Trajectory" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Unlabeled from" value="1718"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:24:48"/>
+          <Param header="0" name="Label" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Frame" value="1721"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:24:54"/>
+          <Param header="0" name="Trajectory" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Unlabeled from" value="1725"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P05NN:RightHand3" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:25:01"/>
+          <Param header="0" name="Trajectory" value="P05NN:RightHand3"/>
+          <Param header="0" name="Unlabeled from" value="1736"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:LeftHand4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:25:13"/>
+          <Param header="0" name="Label" value="P05NN:LeftHand4"/>
+          <Param header="0" name="Frame" value="1758"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:25:18"/>
+          <Param header="0" name="Label" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Frame" value="1760"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:25:24"/>
+          <Param header="0" name="Trajectory" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Unlabeled from" value="1761"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:UkeHead4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:25:30"/>
+          <Param header="0" name="Label" value="P05NN:UkeHead4"/>
+          <Param header="0" name="Frame" value="1763"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:LeftHand4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:26:24"/>
+          <Param header="0" name="Label" value="P05NN:LeftHand4"/>
+          <Param header="0" name="Frame" value="1812"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:LeftHand4" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:26:31"/>
+          <Param header="0" name="Label" value="P05NN:LeftHand4"/>
+          <Param header="0" name="Frame" value="1823"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:26:34"/>
+          <Param header="0" name="Label" value="P05NN:RightHand5"/>
+          <Param header="0" name="Frame" value="1823"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P05NN:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:26:59"/>
+          <Param header="0" name="Trajectory" value="P05NN:UkeHead2"/>
+          <Param header="0" name="Unlabeled from" value="1830"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:27:06"/>
+          <Param header="0" name="Label" value="P05NN:UkeHead2"/>
+          <Param header="0" name="Frame" value="1833"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P05NN:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:27:15"/>
+          <Param header="0" name="Trajectory" value="P05NN:UkeHead2"/>
+          <Param header="0" name="Unlabeled from" value="1837"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P05NN:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-May-08 12:27:23"/>
+          <Param header="0" name="Label" value="P05NN:UkeHead2"/>
+          <Param header="0" name="Frame" value="1848"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+  </Run>
+
+</Trial>

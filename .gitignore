@@ -1,5 +1,7 @@
-# Ignore data folder
-04_DataJudo
+# Ignore Data files with wrong extensions
+*.avi
+*.xcp
+*.x2d
 
 # Latex specific ignores
 *.gz
