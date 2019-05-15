@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Trial name="Trial20" notes="">
+
+  <Parameters>
+    <Param header="0" name="Capture Date" value="2019-Apr-04 13:57:32"/>
+    <Param header="0" name="x2d" value="Trial20.x2d"/>
+  </Parameters>
+
+  <Run name="" notes="">
+    <Parameters>
+      <Param header="0" name="Version" value="2.5.0.93422h"/>
+      <Param header="0" name="Start Date" value="2019-Apr-22 13:57:21"/>
+    </Parameters>
+    <OperationType name="Core Processing" notes="">
+      <OperationSubType name="Combined Processing" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:57:21"/>
+          <Param header="1" name="Frame Range" value=""/>
+          <Param header="0" name="First Frame" value="1"/>
+          <Param header="0" name="Last Frame" value="4292"/>
+          <Param header="1" name="General" value=""/>
+          <Param header="0" name="Processing Output level" value="Labels"/>
+          <Param header="1" name="Grayscale Circle Fitting" value=""/>
+          <Param header="0" name="Enable" value="Yes"/>
+          <Param header="0" name="Circularity Threshold Tweak" value="0"/>
+          <Param header="1" name="Reconstruction" value=""/>
+          <Param header="0" name="3D Predictions" value="Yes"/>
+          <Param header="0" name="Environmental Drift Tolerance" value="1.5"/>
+          <Param header="0" name="Minimum Cameras to Start Trajectory" value="3"/>
+          <Param header="0" name="Minimum Cameras to Continue Trajectory" value="2"/>
+          <Param header="0" name="Reconstruction Minimum Separation" value="14"/>
+          <Param header="0" name="Minimum Centroid Radius" value="0"/>
+          <Param header="0" name="Maximum Centroid Radius" value="50"/>
+          <Param header="0" name="Minimum Reconstruction Radius" value="0"/>
+          <Param header="0" name="Maximum Reconstruction Radius" value="1000"/>
+          <Param header="0" name="Volume min X" value="-100000"/>
+          <Param header="0" name="Volume min Y" value="-100000"/>
+          <Param header="0" name="Volume min Z" value="-100000"/>
+          <Param header="0" name="Volume max X" value="100000"/>
+          <Param header="0" name="Volume max Y" value="100000"/>
+          <Param header="0" name="Volume max Z" value="100000"/>
+          <Param header="1" name="Trajectory Tracking" value=""/>
+          <Param header="0" name="Trajectory Startup Error" value="150"/>
+          <Param header="0" name="Trajectory Prediction Error" value="150"/>
+          <Param header="0" name="Max Trajectory Length to Delete" value="0"/>
+          <Param header="1" name="Labeling" value=""/>
+          <Param header="0" name="Label completeness entrance threshold" value="0.84999999999999998"/>
+          <Param header="0" name="Label completeness exit threshold" value="0.59999999999999998"/>
+          <Param header="0" name="Booting quality" value="0"/>
+          <Param header="0" name="Booting versus tracking" value="0.5"/>
+          <Param header="0" name="Tracking quality" value="0"/>
+          <Param header="0" name="Smoothing factor" value="1"/>
+          <Param header="0" name="Joint Ranges Slack" value="1"/>
+          <Param header="0" name="Enforce Joint Ranges" value="Yes"/>
+          <Param header="0" name="Single pass" value="Yes"/>
+          <Param header="1" name="Kinematic Fitting" value=""/>
+          <Param header="0" name="Prior importance" value="25"/>
+          <Param header="0" name="Mean-pose ratio" value="1"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+    <OperationType name="Manual Edits" notes="">
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:58:28"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="1512"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:58:34"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="1541"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:58:38"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="1560"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:58:49"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="1575"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:58:58"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="1612"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:59:02"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="1596"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:59:12"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="1678"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:59:20"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="1755"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:59:23"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="1848"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:59:33"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="2131"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:59:46"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="2180"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 13:59:51"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="2364"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:00"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="2518"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:06"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="2799"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:10"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3106"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:13"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3034"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:16"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3078"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:19"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3041"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:31"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3059"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:00:40"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3262"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:01:00"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3551"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:01:12"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3641"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:01:48"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3737"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:02:01"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="3763"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:03:42"/>
+          <Param header="0" name="Trajectory" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Unlabeled from" value="3821"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:03:56"/>
+          <Param header="0" name="Trajectory" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Unlabeled from" value="3897"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:04:03"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3898"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:04:11"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3909"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory Forwards - P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:04:19"/>
+          <Param header="0" name="Trajectory" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Unlabeled from" value="3913"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:04:23"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3913"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:04:38"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3923"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Unlabel Trajectory P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:04:47"/>
+          <Param header="0" name="Trajectory" value="P01Youri:UkeHead2"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:04:56"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3931"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:05:00"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3934"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:06:26"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="1881"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:06:29"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="1881"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:06:36"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="2154"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:06:56"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="2432"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:07:00"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="2288"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:LeftHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:07:06"/>
+          <Param header="0" name="Label" value="P01Youri:LeftHand5"/>
+          <Param header="0" name="Frame" value="2085"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:07:38"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3066"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:07:52"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3181"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:07:58"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3241"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:08:01"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3323"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:08:06"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3398"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:08:14"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3594"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:08:28"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3748"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:UkeHead2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:08:37"/>
+          <Param header="0" name="Label" value="P01Youri:UkeHead2"/>
+          <Param header="0" name="Frame" value="3818"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:11:15"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="2447"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:11:23"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="2768"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:11:32"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="4006"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand2" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:12:07"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand2"/>
+          <Param header="0" name="Frame" value="2565"/>
+        </Parameters>
+      </OperationSubType>
+      <OperationSubType name="Label Trajectory  P01Youri:RightHand5" notes="">
+        <Parameters>
+          <Param header="0" name="Date" value="2019-Apr-22 14:12:31"/>
+          <Param header="0" name="Label" value="P01Youri:RightHand5"/>
+          <Param header="0" name="Frame" value="2739"/>
+        </Parameters>
+      </OperationSubType>
+    </OperationType>
+  </Run>
+
+</Trial>
