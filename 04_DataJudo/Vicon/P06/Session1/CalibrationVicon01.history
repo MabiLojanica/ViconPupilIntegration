@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<Trial name="CalibrationVicon01" notes="">
-
-  <Parameters>
-    <Param header="0" name="Capture Date" value="2019-Apr-11 17:26:22"/>
-    <Param header="0" name="x2d" value="CalibrationVicon01.x2d"/>
-  </Parameters>
-
-</Trial>

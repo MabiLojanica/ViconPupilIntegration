@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<Trial name="EyeCalibration01" notes="">
-
-  <Parameters>
-    <Param header="0" name="Capture Date" value="2019-Apr-10 14:33:30"/>
-    <Param header="0" name="x2d" value="EyeCalibration01.x2d"/>
-  </Parameters>
-
-</Trial>
