@@ -2,6 +2,12 @@
 *.avi
 *.xcp
 *.x2d
+*.enf
+*.history
+*.system
+*.sup
+*.mp
+*.vsk
 
 # Latex specific ignores
 *.gz
