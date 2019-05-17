@@ -1,6 +1,5 @@
-%% Vicon Integration Head Orientation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+%% Vicon Integration Head Orientation
 %
 % Requirements:
 % 1. BTK-Toolkit: https://code.google.com/archive/p/b-tk/
@@ -31,68 +30,78 @@ addpath(genpath(cd));% Add all files in subfolders to path
 % Make a link to where the data is stored
 DataDir = fullfile(pwd,'04_DataJudo\Vicon');
 
-
 % Load all participant folders
 Pfolders_struct = dir(fullfile(DataDir,'P*'));
 % Generate cell array of full-path folder names
-Pfolders_cell = fullfile(repmat({DataDir},length(Pfolders_struct),1),{Pfolders_struct.name}');
+Pfolders_cell = fullfile(repmat({DataDir},length(Pfolders_struct),1), ...
+    {Pfolders_struct.name}');
 clear Pfolders_struct tmp
+
+% Create an export variable for export to R
+exportAllData = [];
+
+
 
 %% Cycle through all participants
 for p = 1: length(Pfolders_cell)
     
-    % Load all .c3d trial files (Having the string Trial*.c3d in it
-    c3dTrials_struct = dir(fullfile(Pfolders_cell{p},'Session1',sprintf('Trial*.c3d',Pfolders_cell{p}))); %#ok<CTPCT>
+    % Load all .c3d trial files (Having the string Trial*.c3d in it)
+    c3dTrials_struct = dir(fullfile(Pfolders_cell{p},'Session1', ...
+        sprintf('Trial*.c3d',Pfolders_cell{p})));
     % Use fullfile to generate cell array of full-path file names
-    c3dTrialnames_cell = fullfile(repmat({Pfolders_cell{p}},length(c3dTrials_struct),1),'Session1',{c3dTrials_struct.name}');
+    c3dTrialnames_cell = fullfile(repmat({Pfolders_cell{p}}, ...
+        length(c3dTrials_struct),1),'Session1',{c3dTrials_struct.name}');
     % Save trial names
     trialnamesExtended = {c3dTrials_struct.name}';
-    trialnames = regexprep(trialnamesExtended, '.c3d', '');% Remove file extension from trial name
+    % Remove file extension from trial name
+    trialnames = regexprep(trialnamesExtended, '.c3d', '');
     clear trialnames_struct
     
     
     %% Cycle through all trials of each participant
     for t = 1:length(c3dTrialnames_cell)
         
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %  Section: Load and Organize Data
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         %% Use BTK-toolkit to read the c3d Files
-        [points,pointsInfo, fileLength] = btkGetPointsDirect(c3dTrialnames_cell{t});
+        [points,pointsInfo, fileLength] = ...
+            btkGetPointsDirect(c3dTrialnames_cell{t});
         
         %% Interpolate missing data
-        % The threshold of missing markers indicates whether the marker will be
-        % interpolated (value from 0 to 100). In case of 20, only markers with
-        % less than 20 percent missings will be interpolated
+        % The threshold of missing markers indicates whether the marker
+        % will be interpolated (value from 0 to 100). In case of 20, only
+        % markers with less than 20 percent missings will be interpolated
         points = interpolateStructFull(points);
         
         
         
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Preprocess Data
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         %% Filter the interpolated data
         % The butter filter smoothes the data with input arguments
-        points_filt = filterKinematicsButter(points,pointsInfo.frequency, ...
-            10.5,40);
+        points_filt = ...
+            filterKinematicsButter(points,pointsInfo.frequency,10.5,40);
         clear points
         
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Calculations Body segments
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         %% Extract Body segment position in Vicon
-        markerNames = fieldnames(points_filt); % Make a list of the marker names
+        markerNames = fieldnames(points_filt); % Make a list of the markers
         
-        % Initiate Markers
+        % Initiate Markers as empty variables before cycling through data
         ToriHead = [];
         UkeHead = [];
         LeftHand = [];
         RightHand = [];
         CalibrationCross = [];
         
+        % Add the markers (1-n) together to a cluster
         for s = 1:length(markerNames)
             string = markerNames{s};
             % Cycle trough each
@@ -109,10 +118,11 @@ for p = 1: length(Pfolders_cell)
                 case {'CalibrationCross1', 'CalibrationCross2', ...
                         'CalibrationCross3', 'CalibrationCross4' ...
                         'CalibrationCross5'}
-                    CalibrationCross = cat(3,CalibrationCross,points_filt.(string));
+                    CalibrationCross = cat(3,CalibrationCross, ...
+                        points_filt.(string));
             end
         end
-
+        
         
         % Sum the markers and take mean (e.g., mean(HeadTori(:,:,1:4)))
         % To take the mean of all markers, divide by the number of markers
@@ -124,80 +134,124 @@ for p = 1: length(Pfolders_cell)
         
         clear RightHand LeftHand ToriHead UkeHead s
         
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Calculations of Head Vector
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         %% Calculate angle between UkeHead and Hands
         % Create a vector from Head to either hand
         HeadLeft = average.UkeHead_c - average.LeftHand_c;
         HeadRight = average.UkeHead_c - average.RightHand_c;
         
-        %% Check if the trial contains any data
+        %% CATCH: Check if the trial contains any data
         if (isempty(HeadLeft) == 1) || (isempty(HeadRight) == 1)
             disp(sprintf('Trial empty: Participant %d, Trial: %d', p, t));
-            
             % Fill angle head with NaNs
-            angleHead = NaN(fileLength,1);
-        else
-            
-            % In case its not empty, calculate angles
-            % https://ch.mathworks.com/matlabcentral/answers/328240-calculate-the-3d-angle-between-two-vectors
-            for d = 1:fileLength
-                HLeftv = HeadLeft(d,:)'; % Transform the first double into vert vector
-                HRightv = HeadRight(d,:)'; % Same here
-                angleHead(d,:) = atan2d(norm(cross(HLeftv,HRightv)),dot(HLeftv,HRightv));
-            end
-
-            
-            clear HLeft HRight HLeftv HRightv average CalibrationCross LeftHand RightHand UkeHead ToriHead d
-            
+            exportData(:,t) = NaN(100,1);
+            continue
+        end
+        
+        % In case its not empty, calculate angle between head and hands
+        for d = 1:fileLength
+            % Transpond the double vectors
+            HLeftv = HeadLeft(d,:)';
+            HRightv = HeadRight(d,:)';
+            % Calculate the angle between the two vectors
+            angleHead(d,:) = atan2d(norm(cross(HLeftv,HRightv)), ...
+                dot(HLeftv,HRightv));
+        end
+        
+        clear HLeft HRight HLeftv HRightv CalibrationCross ...
+            UkeHead ToriHead d
+        
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Trim Data to start frame (open eyes) and end frame (grip)
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        %% Define start and end frame of the trial
+        % Define start frame when participants opens eyes
+        startFrame = 1;
+        
+        % Distance between two 3D point arrays
+        distance = vecnorm(average.LeftHand_c - average.RightHand_c,2,2);
+        
+        % Find events where  distance is less than 200 cm
+        threshold_cm = 180;
+        start = distance < threshold_cm;
+        
+        % Define time of clap
+        clap = find(start,1,'first');
+        
+        % CATCH: IF NO CLAP IS FOUND:
+        if isempty(clap) == 1
+            clap = 1;
+             disp(sprintf('Clap not found: Participant %d, Trial: %d', p, t))
+        end
+        
+        %% When is the first time the participant starts moving after clap?
+        % Get the movement velocity of Ukes head
+        delta_dist = (average.UkeHead_c(:,1).^2+ average.UkeHead_c(:,2).^2 +average.UkeHead_c(:,3).^2).^.5;
+        % Get the velocity (m/s) from the clap on until the end of the
+        % trial
+        velUke = ([0; diff(delta_dist(clap:end))]*pointsInfo.frequency)/100;
+        
+        % Find the moment Uke moves head with more than 1 meter per second
+        threshold_ms = 1; 
+        
+        % Has Uke started moving?
+        startMovement = distance < threshold_cm;
+        
+        % Define time of movement initiation
+        startFrame = find(startMovement,1,'first');
+        
+        clear average delta_vec start threshold_m distance treshold_ms
+  
+        % CATCH: IF NO MOVEMENT INITIATION IS FOUND
+        if isempty(startFrame) == 1
+            startFrame = clap;
+             disp(sprintf('Movement initiation not found: Participant %d, Trial: %d', p, t))
         end
         
         
         
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % Trim Data to start frame (open eyes) and end frame (grip)
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-        %% Define start frame
-        startFrame = 1;
         
         %% Define end frame
-        grip = startFrame + 500;
-        
+        endFrame = startFrame + 300;
         % Cut data at start and end frames
-        cutAngleHead = angleHead(startFrame:grip,1);
+        cutAngleHead = angleHead(startFrame:endFrame,1);
         
-        
-        % Normalized length
+        %% Normalize length to be 1:100 for each trial
         NormLength = 100;
         % Now squeeze the angular data into the normalized array
         angleHeadPct = resample(cutAngleHead,NormLength,length(cutAngleHead));
         
-        clear angleHead cutAngleHead grip HeadLeft HeadRight NormLength startFrame
-      
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        clear angleHead cutAngleHead endFrame HeadLeft HeadRight ...
+            NormLength startFrame
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Save Data
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-          
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Concatenate the results of all trials together
         exportNames{1,t} = trialnames{t};
         exportData(:,t) = angleHeadPct;
         
     end % End of trial loop
     
- 
-    exportNamesPerParticipant(1,t) = horzcat(exportNames,exportNames);
-    exportDataPerParticipant = horzcat(exportData,exportData);
+    % Concatenate the trials of all participants together
+    exportAllData = horzcat(exportAllData,exportData);
     
     
     
 end % End of participant loop
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Export Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Export the data to a .mat file
+save 05_RStatistics/AllTrials.mat exportAllData
 
-
-% Place calculations for all participant here (i.e. average over all participants, export data/graphs)
-T = table(exportDataAll);
 
