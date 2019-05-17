@@ -195,17 +195,21 @@ for p = 1: length(Pfolders_cell)
         % Get the velocity (m/s) from the clap on until the end of the
         % trial
         velUke = ([0; diff(delta_dist(clap:end))]*pointsInfo.frequency)/100;
+        % Take the absolute velocities of the head
+        velUke = abs(velUke);
         
         % Find the moment Uke moves head with more than 1 meter per second
-        threshold_ms = 1; 
-        
+        threshold_vel = 1; 
         % Has Uke started moving?
-        startMovement = distance < threshold_cm;
+        startMovement = velUke > threshold_vel;
         
         % Define time of movement initiation
-        startFrame = find(startMovement,1,'first');
+        startFrameOffset = find(startMovement,1,'first');
+        % The true start frame is defined as an offset from when the clap
+        % happened:
+        startFrame = startFrameOffset + clap;
         
-        clear average delta_vec start threshold_m distance treshold_ms
+        clear average delta_vec start threshold_m treshold_ms
   
         % CATCH: IF NO MOVEMENT INITIATION IS FOUND
         if isempty(startFrame) == 1
@@ -214,12 +218,20 @@ for p = 1: length(Pfolders_cell)
         end
         
         
-        
-        
         %% Define end frame
-        endFrame = startFrame + 300;
+        endFrame = startFrame + 500;
         % Cut data at start and end frames
         cutAngleHead = angleHead(startFrame:endFrame,1);
+        uncutAngleHead = angleHead(:,1);
+        
+        
+%         %% PLOTTING TO DEBUG
+%         plot(uncutAngleHead)
+%         line([startFrame startFrame], [-120 120])
+%         line([clap clap], [-50 50])
+%         hold on
+%         plot(velUke,'r')
+%         
         
         %% Normalize length to be 1:100 for each trial
         NormLength = 100;
