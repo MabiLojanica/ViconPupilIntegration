@@ -36,7 +36,7 @@ DataDir = fullfile(pwd,'04_DataJudo\Vicon');
 Pfolders_struct = dir(fullfile(DataDir,'P*'));
 % Generate cell array of full-path folder names
 Pfolders_cell = fullfile(repmat({DataDir},length(Pfolders_struct),1),{Pfolders_struct.name}');
-clear Pfolders_struct
+clear Pfolders_struct tmp
 
 %% Cycle through all participants
 for p = 1: length(Pfolders_cell)
@@ -136,7 +136,9 @@ for p = 1: length(Pfolders_cell)
         %% Check if the trial contains any data
         if (isempty(HeadLeft) == 1) || (isempty(HeadRight) == 1)
             disp(sprintf('Trial empty: Participant %d, Trial: %d', p, t));
-           
+            
+            % Fill angle head with NaNs
+            angleHead = NaN(fileLength,1);
         else
             
             % In case its not empty, calculate angles
@@ -162,33 +164,40 @@ for p = 1: length(Pfolders_cell)
         startFrame = 1;
         
         %% Define end frame
-        grip = startFrame + 1000;
+        grip = startFrame + 500;
+        
+        % Cut data at start and end frames
+        cutAngleHead = angleHead(startFrame:grip,1);
         
         
-        % Some issues here
-        data(1:length(angleHead),t) = angleHead;
+        % Normalized length
+        NormLength = 100;
+        % Now squeeze the angular data into the normalized array
+        angleHeadPct = resample(cutAngleHead,NormLength,length(cutAngleHead));
+        
+        clear angleHead cutAngleHead grip HeadLeft HeadRight NormLength startFrame
       
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Save Data
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-        
-                    
-%             %% Calculate angular values and save in double
-%             angleTable{t,1} = angleHead;
-%             MeanTrials(1,t) = mean(angleHead);
-%             MedianTrials(1,t) = median(angleHead);
-        
-        
-        
+          
+        exportNames{1,t} = trialnames{t};
+        exportData(:,t) = angleHeadPct;
         
     end % End of trial loop
     
-    % Place calculations for participant here (i.e. average over all trials)
-%     boxplotTrials(angleTable, MedianTrials,1,'Boxplot',1,'.png');
+ 
+    exportNamesPerParticipant(1,t) = horzcat(exportNames,exportNames);
+    exportDataPerParticipant = horzcat(exportData,exportData);
+    
+    
     
 end % End of participant loop
 
-% Place calculations for all participant here (i.e. average over all participants, export data/graphs)
 
+
+
+
+% Place calculations for all participant here (i.e. average over all participants, export data/graphs)
+T = table(exportDataAll);
 
